@@ -50,7 +50,7 @@ def get(link, basedir):
 		path = link.split("/")[-1] 
 	else:
 		path = link.split("/")[-2]
-	if not basedir.ends("/"): basedir = basedir + "/"
+	if not basedir.endswith("/"): basedir = basedir + "/"
 	path = basedir + path
 	if not os.path.exists(path) : os.mkdir(path)
 	content = convert_img(page.content, path)
